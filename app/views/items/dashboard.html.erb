@@ -1,0 +1,79 @@
+<div class="container">
+<%# displays title %>
+  <div class="dashboard-titles">
+    <h1>Incoming Trade Requests:</h1>
+    <p>Accept or decline your incoming trade requests</p>
+  </div>
+
+<%# incoming trades %>
+  <% if @trades_incoming %>
+    <% @trades_incoming.each do |trade| %>
+      <% if trade.status == false %>
+
+
+      <% offer = @items.find(trade.offered_item_id) %>
+      <% request = @items.find(trade.requested_item_id) %>
+      <div class="flex-container profile-card">
+        <div class="trade-item-image">
+          <%= cl_image_tag request.photo.key, height: 300, width: 400, crop: :fill, class: "photo" %>
+        </div>
+        <div class="middle-container">
+          <div class="trade-text text-box"><h5>Your <%= request.name %> for <%= offer.user.first_name %>'s <%= offer.name %></h5>
+          </div>
+          <%# buttons container %>
+            <div class="button-container">
+          <%# accept button %>
+
+            <%= simple_form_for [@item, trade] do |f| %>
+              <%= f.hidden_field :status, value: !trade.status %>
+              <%= f.submit "Accept Trade", class: 'btn btn-outline-primary' %>
+            <% end %>
+
+              <%# decline button %>
+            <%= simple_form_for [@item, trade], method: :delete do |f| %>
+              <%= f.submit "Decline Trade", class: 'btn btn-outline-danger' %>
+            <% end %>
+              <%# <%= button_to 'Decline Trade', item_trade_path(@item.id, trade), turbo_method: :delete, class: 'btn btn-outline-danger', data: { turbo_confirm: 'Are you sure you want to decline this trade?' } %>
+            </div>
+          </div>
+
+          <%# offer item %>
+          <div class="trade-item-image">
+            <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill, class: "photo" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+
+<%# outgoing trade requests %>
+
+  <div class="dashboard-titles">
+    <h1>Outgoing Trade Requests:</h1>
+    <p>Wait for your outgoing trade requests to be accepted</p>
+  </div>
+
+
+    <% if @trades_outgoing %>
+      <% @trades_outgoing.each do |trade| %>
+        <% request = @items.find(trade.offered_item_id) %>
+        <% offer = @items.find(trade.requested_item_id) %>
+        <div class="flex-container profile-card">
+          <div class="trade-item-image">
+            <%= cl_image_tag offer.photo.key, height: 300, width: 400, crop: :fill, class: "photo" %>
+          </div>
+          <div class="middle-container">
+            <div class="text-box"><h5> <%= offer.user.first_name %>'s <%= offer.name %> for your <%= request.name %> </h5>
+            </div>
+          </div>
+          <div class="trade-item-image">
+            <%= cl_image_tag request.photo.key, height: 300, width: 400, crop: :fill, class: "photo" %>
+          </div>
+        </div>
+        <% end %>
+      <% else %>
+        <h1>You have no outgoing trades</h1>
+    <% end %>
+    <hr>
+  </div>
+</div>

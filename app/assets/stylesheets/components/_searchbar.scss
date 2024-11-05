@@ -1,0 +1,45 @@
+.searchBar{
+  background-color:rgb(230, 230, 230);
+  padding:10px;
+  color: rgb(233, 83, 83);
+  width:100%;
+  margin-bottom: $br1;
+  border-radius: $br2;
+
+  // height:50px;
+}
+
+.searchBar:hover{
+  background-color:rgb(53, 53, 53);
+  transition:1.5s;
+
+}
+.sb_form{
+  border-radius: $br1;
+  padding: 5px;
+  display:flex;
+
+}
+
+.sb_textarea{
+  border: 2px solid white;
+  border-radius: $br1;
+  width:75%;
+  flex-grow:2;
+  margin-right: 10px;
+
+}
+
+.sb_textarea:focus{
+  color:rgb(85, 103, 205);
+}
+
+.sb_button{
+  border: 2px solid white;
+  border-radius: $br1;
+  width:25%;
+  flex-grow:1;
+  margin-left: 10px;
+
+
+}

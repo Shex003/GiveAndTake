@@ -1,0 +1,73 @@
+// Import page-specific CSS files here.
+@import "home";
+a{
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  font-size: 18px;
+  background: rgb(247, 255, 255);
+  padding-top: 95px;
+  // padding-bottom: 105px;
+}
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: lighter;
+  color: rgb(64, 67, 68);
+}
+h1, h2, h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+h5 {
+  font-weight: 700;
+}
+// h1 {
+//   font-size: 30px;
+
+// }
+// h2 {
+//   font-size: 25px;
+//   margin-bottom: 20px;
+// }
+// h3 {
+//   font-size: 23px;
+// }
+.padded {
+  padding: 30px 0;
+}
+
+.content {
+  display: flex;
+}
+
+.item-photo {
+  // width: 100%;
+  // height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 6.75px;
+  transition: transform 0.2s;
+}
+
+.item-photo:hover {
+  transform: scale(1.05);
+}
+
+.item-text {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.main {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.item-desc {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,41 @@
+.card {
+  box-shadow: 0 0 15px rgba(94, 94, 94, 0.2);
+  border-radius: 5px;
+}
+
+// .cardHover{
+//   border: 1px solid rgb(199, 199, 199);
+
+// }
+
+.cardHover:hover{
+  box-shadow: 4px 4px 15px rgba(0,0,0,0.2);
+}
+
+#cards-container {
+  width: 100vw !important;
+  margin: 0 !important;
+}
+
+.card {
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid #d3eff4;
+}
+
+.show-card {
+  box-shadow: 0 0 15px rgba(94, 94, 94, 0.2);
+  border-radius: 5px;
+}
+
+.photo {
+  border-radius: 10px 10px 0 0;
+}
+
+.trade-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers items vertically */
+  align-items: center; /* Centers items horizontally (optional) */
+  height: 100%; /* Ensure the container has a height to center items within */
+}

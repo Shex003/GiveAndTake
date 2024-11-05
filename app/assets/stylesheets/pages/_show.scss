@@ -1,0 +1,32 @@
+// ------------------------------------------------------test draggable section
+
+.example-parent {
+  border: 2px solid #f3f3f3;
+  color: black;
+  display: flex;
+  font-family: sans-serif;
+  font-weight: bold;
+  height:800px;
+}
+
+.example-origin {
+  flex-basis: 100%;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.example-draggable {
+  background-color: $lightblue;
+  font-weight: normal;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  height:100px;
+}
+
+.example-dropzone {
+  background-color: $light-gray;
+  flex-basis: 100%;
+  flex-grow: 1;
+  padding: 10px;
+}

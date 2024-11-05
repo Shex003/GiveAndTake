@@ -1,0 +1,40 @@
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.middle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-box {
+  margin-bottom: 10px;
+  // font-size: 16px;
+  font-weight: bold;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+.profile-card {
+  box-shadow: 0 0 15px rgba(94, 94, 94, 0.2);
+  border-radius: 10px;
+  margin: 25px;
+}
+
+.dashboard-titles {
+  text-align: center;
+
+}
+
+.trade-text {
+  text-align: center;
+}

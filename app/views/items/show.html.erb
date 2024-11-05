@@ -1,0 +1,42 @@
+<div class="container">
+<div class="show-card mb-3" >
+  <div class="row g-0">
+    <div class=" col-md-4">
+      <%= cl_image_tag @item.photo.key, height: 300, width: 400, crop: :fill %>
+    </div>
+    <div class="flex-container col-md-4">
+      <div class="show-card-body">
+        <h2 class="card-title"><%=@item.user.first_name.capitalize%>'s Item For Trade</h2>
+        <h3 class="card-title"><%= @item.name %></h3>
+        <p class="card-text"><%= @item.description %> </p>
+        <p class="card-text">€<%= @item.price %> </p>
+        <p class="card-text"><small class="text-body-secondary"> Category: <%= @item.category %></small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <br>
+  <br>
+</div>
+<div class="container">
+  <% if user_signed_in? %>
+    <% if @item.user != current_user %>
+      <%= simple_form_for [ @item, @trade] do |f| %>
+        <%= f.hidden_field :requested_item_id, value: @item.id %>
+        <%= f.input :offered_item_id, collection: Item.where(user_id: current_user)%>
+        <div class="buttonFormGlobal">
+        <%= f.submit 'make offer!', class: '' %>
+        </div>
+      <% end %>
+    <% else %>
+      <p>You cannot make an offer on your own items</p>
+    <% end %>
+    <% else %>
+    <div class="buttonFormGlobal">
+
+    <%= link_to "Login to make an offer!", new_user_session_path, class: "" %>
+    </div>
+
+    <% end %>
+</div>

@@ -1,0 +1,22 @@
+.navbar-lewagon {
+  justify-content: space-between;
+  // background-color:rgb(223, 223, 223);
+  background-color:rgba(223, 223, 223, 0.565);
+  color: rgb(221, 221, 221);
+
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 50px;
+}
+
+.navbar-lewagon:hover {
+background-color: rgb(231, 231, 231);
+color: rgb(93, 93, 93);
+transition: 2s;
+cursor: crosshair;
+}
